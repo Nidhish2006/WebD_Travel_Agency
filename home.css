@@ -1,0 +1,139 @@
+*{
+    margin: 0;
+    padding: 0%;
+}
+.navi{
+   display: flex;
+   justify-content: space-between;
+   min-width: 1600px;
+   padding-right: 80px;
+   height: 10px;
+   
+}
+
+.logo{
+    margin-left: 0%;
+    margin-top: 0%;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-image: linear-gradient(to bottom, #2874e5, #00a1fa, #00c1d3, #00d788, #b0e141);
+    height: 100px;
+    color: black;
+}
+a{
+    text-decoration: none;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 650;
+    text-transform: uppercase;
+}
+.hu{
+    display: flex;
+    justify-content: center;
+    background-image: linear-gradient(greenyellow, skyblue);
+    width: fit-content; height: 0.5rem;
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 1px 2px 2px 2px #000000;
+    font-variant: small-caps;
+    text-shadow: 2px 3px 6px gray;
+    margin: auto;
+    flex-direction: column;
+    align-items: center;
+}
+
+main{
+    background-image: url(image.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+footer{
+    background-color: #000000;
+    color: silver;
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    align-items: center;
+}
+.book:hover{
+    color: red;
+}
+
+.intro{
+    display: flex;
+    justify-content: center;
+    height: 200px;
+    width: 1200px;
+    align-items: center;
+    padding: 20px;
+    font-size: 22px;
+    font-weight: 600;
+    text-shadow: 2px 3px 5px gray;
+    margin: auto;
+
+}
+.div1{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 400px;
+    margin: auto;
+    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 7px 18px;
+    border-radius: 15px;
+    height: auto;
+    font-weight: 500;
+    transition: all 0.5s;
+}
+.div1:hover{
+    transform: scale(1.1);
+}
+.butt{
+    height: 30px;
+    width: 100px;
+    border-radius: 8px;
+    border: solid black;
+    background-color: black;
+    color: #00d788;
+    font-weight: 700;
+}
+
+.yes{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.tower{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 7px 18px;
+}
+.intro1{
+    display: flex;
+    justify-content: center;
+    height: auto;
+    width: 1200px;
+    align-items: center;
+    padding: 20px;
+    font-size: 22px;
+    font-weight: 600;
+    text-shadow: 2px 3px 5px gray;
+    margin: auto;
+    margin-top: 20px;
+
+}
+/* .last{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    align-items: center;
+} */
+ .book1{
+    color: white;
+ }
+ .book1:hover{
+    color: greenyellow;
+    text-decoration: underline;
+    text-underline-offset: 12px;
+ }

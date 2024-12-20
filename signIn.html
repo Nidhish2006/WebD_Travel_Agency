@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="signIn.css">
+</head>
+<body>
+    <span style="display: flex; justify-content: center; margin-right: 10px;">
+    <img src="logoo.png" width="250px" height="150px" class="imge">
+    </span><br><br>
+    <div class="s1">
+        <h2>Sign In</h2> <br><br>
+
+        <label for="name">Email: </label>
+        <input type="email" name="email" id="email">
+        <span id="emailError" class="err"></span><br><br>
+
+        <label for="name">Enter Password: </label>
+        <input type="password" name="pass" id="pass">
+        <span id="passError" class="err"></span><br><br>
+
+        
+        <center><button type="button" class="sign-up" onclick="PhirseSahiBharna()">Sign In</button></center>
+        <br><br>
+        <span>
+            <a href="signUp.html" style="color:darkmagenta;" target="_blank">New Here? Create an account</a>
+        </span>
+    </div>
+
+    <footer>
+      <div class="div2">
+          <h2>Emails</h2><br>
+          <p>1stTest@trav.net.in</p><br>
+          <p>abc.1234@gmail.com</p><br>
+          <p>2ndTest@rediffmail.com</p>
+      </div>
+      <div>
+          <h2>Copyright © TravelMate Pvt. Ltd. All Rights Reserved.</h2>
+      </div>
+      <div>
+          <h2>Contact Here</h2><br>
+          <p>91X - XYZ - 0000</p><br>
+          <p>0120 44XX 0088</p>
+      </div>
+  </footer>
+
+    <script>
+        function PhirseSahiBharna() {
+      document.getElementById("emailError").textContent = "";
+      document.getElementById("passError").textContent = "";
+
+      let haan = true;
+
+      const email = document.getElementById("email").value.trim();
+      const emailpattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+      if(email === ""){
+        document.getElementById("emailError").textContent = "Please enter your email!";
+        haan = false;
+      }
+      else if(!emailpattern.test(email)){
+        document.getElementById("emailError").textContent = "Please enter a valid email format!";
+        haan = false;
+      }
+
+      const pass = document.getElementById("pass").value.trim();
+      const UpperCheck = /[A-Z]/;
+      const SpecialCheck = /[@_*.]/;
+      if(pass === ""){
+        document.getElementById("passError").textContent = "Please enter password!";
+        haan = false;
+      }
+      else if(pass.length<6){
+        document.getElementById("passError").textContent = "Please must contain atleast 6 digits!";
+        haan = false;
+      }
+      else if(!UpperCheck.test(pass)){
+        document.getElementById("passError").textContent = "Please must be atleat one upper case letter!";
+        haan = false;
+      }
+      else if(!SpecialCheck.test(pass)){
+        document.getElementById("passError").textContent = "Please must be atleat special character!";
+        haan = false;
+      }
+      if(haan){
+        window.open('homePage.html','_blank');
+      }
+    }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="signUp.css">
+</head>
+
+<body>
+    <span style="display: flex; justify-content: center; margin-right: 10px;">
+    <img src="logoo.png" width="250px" height="150px" class="imge">
+    </span><br><br>
+    <div class="c1">
+        <h2>Sign Up</h2> <br><br>
+        <label for="name">Name: </label>
+        <input type="text" name="name" id="name">
+        <span id="nameError" class="error"></span><br><br>
+
+        <label for="name">Email: </label>
+        <input type="email" name="email" id="email">
+        <span id="emailError" class="error"></span><br><br>
+
+        <label for="name">Create Password: </label>
+        <input type="password" name="pass" id="pass">
+        <span id="passError" class="error"></span><br><br>
+
+        <label for="name">Conifrm Password: </label>
+        <input type="password" name="pass2" id="pass2">
+        <span id="pass2Error" class="error"></span><br><br>
+
+        <center><button type="button" class="sign-up" onclick="SahiSeBharna()">Create Account</button></center><br>
+        <span>
+            <a href="signIn.html" style="color: orange;" target="_blank">Already signed up? Sign In here</a>
+        </span>
+    </div>
+    <footer class="foot">
+      <div class="div2">
+          <h2>Emails</h2><br>
+          <p>1stTest@trav.net.in</p><br>
+          <p>abc.1234@gmail.com</p><br>
+          <p>2ndTest@rediffmail.com</p>
+      </div>
+      <div>
+          <h2>Copyright © TravelMate Pvt. Ltd. All Rights Reserved.</h2>
+      </div>
+      <div>
+          <h2>Contact Here</h2><br>
+          <p>91X - XYZ - 0000</p><br>
+          <p>0120 44XX 0088</p>
+      </div>
+  </footer>
+
+    <script>
+        function SahiSeBharna() {
+      document.getElementById("nameError").textContent = "";
+      document.getElementById("emailError").textContent = "";
+      document.getElementById("passError").textContent = "";
+      document.getElementById("pass2Error").textContent = "";
+
+      let haan = true;
+      const name = document.getElementById("name").value.trim();
+      if(name === ""){
+        document.getElementById("nameError").textContent = "Please enter your name!";
+        haan = false;
+      }
+      else if(name.length < 3){
+        document.getElementById("nameError").textContent = "Name must be greater than 3 letters";
+        haan = false;
+      }
+
+      const email = document.getElementById("email").value.trim();
+      const emailpattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+      if(email === ""){
+        document.getElementById("emailError").textContent = "Please enter your email!";
+        haan = false;
+      }
+      else if(!emailpattern.test(email)){
+        document.getElementById("emailError").textContent = "Please enter a valid email format!";
+        haan = false;
+      }
+
+      const pass = document.getElementById("pass").value.trim();
+      const UpperCheck = /[A-Z]/;
+      const SpecialCheck = /[@_*.]/;
+      if(pass === ""){
+        document.getElementById("passError").textContent = "Please enter password!";
+        haan = false;
+      }
+      else if(pass.length<6){
+        document.getElementById("passError").textContent = "Please must contain atleast 6 digits!";
+        haan = false;
+      }
+      else if(!UpperCheck.test(pass)){
+        document.getElementById("passError").textContent = "Please must be atleat one upper case letter!";
+        haan = false;
+      }
+      else if(!SpecialCheck.test(pass)){
+        document.getElementById("passError").textContent = "Password must contain atleat special character!";
+        haan = false;
+      }
+
+      const pass2 = document.getElementById("pass2").value.trim();
+      if(pass2!=pass || pass2 === ""){
+        document.getElementById("pass2Error").textContent = "Password should match with the entered password!";
+        haan = false;
+      }
+      if(haan){
+        window.open('homePage.html','_blank');
+      }
+    }
+    </script>
+    
+</body>
+</html>

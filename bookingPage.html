@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="booking.css">
+</head>
+<body>
+    <h1>Tour Booking Form</h1><br><br>
+    <form id="farm">
+        <div class="div1">
+        <h2>Personal Details:</h2><br>
+        <input type="text" name="name" id="name" placeholder="Enter your name"><br><br>
+        <span id="nameError" class="error"></span>
+
+        <input type="number" name="age" id="age" placeholder="Enter your age"><br><br>
+        <span id="ageError" class="error"></span>
+
+        <input type="number" name="numPass" id="numPass" placeholder="Enter no.of passengers"><br><br>
+        <input type="text" name="mobNum" id="mobNum" placeholder="Enter your mobile number">
+        </div><br><br>
+
+        <div class="div1">
+            <h2>Transport Facilities:</h2><br>
+            <input type="radio" name="bus" id="bus">
+            <label for="bus">Bus</label><br><br>
+
+            <input type="radio" name="train" id="train">
+            <label for="train">Train</label><br><br>
+
+            <input type="radio" name="fly" id="fly">
+            <label for="fly">Flight</label><br><br>
+
+            <label for="startDate">Journey Start Date:</label><br>
+            <input type="date" name="startDate" id="startDate" required><br><br>
+
+            <label for="endDate">Journey End Date:</label><br>
+            <input type="date" name="endDate" id="endDate" required><br><br>
+        </div><br><br>
+
+        <div class="div1">
+            <h2>Other Details:</h2><br>
+            <label for="email">Enter the email where the details will be shared:</label><br>
+            <input type="email" name="email" id="email" placeholder="Enter your email"><br><br>
+            <span id="emailError" class="error"></span>
+
+            <button type="button" id="butt" onclick="PhirseSahiBharna()">Submit</button>
+        </div>
+    </form><br><br>
+
+    <footer class="foot">
+        <div class="div2">
+            <h2>Emails</h2><br>
+            <p>1stTest@trav.net.in</p><br>
+            <p>abc.1234@gmail.com</p><br>
+            <p>2ndTest@rediffmail.com</p>
+        </div>
+        <div>
+            <h2>Copyright © TravelMate Pvt. Ltd. All Rights Reserved.</h2>
+        </div>
+        <div>
+            <h2>Contact Here</h2><br>
+            <p>91X - XYZ - 0000</p><br>
+            <p>0120 44XX 0088</p>
+        </div>
+    </footer>
+
+    <script>
+        function PhirseSahiBharna() {
+      document.getElementById("nameError").textContent = "";
+      document.getElementById("ageError").textContent = "";
+      document.getElementById("emailError").textContent = "";
+
+      let haan = true;
+      const name = document.getElementById("name").value.trim();
+      if(name === ""){
+        document.getElementById("nameError").textContent = "Please enter your name!";
+        haan = false;
+      }
+      else if(name.length < 3){
+        document.getElementById("nameError").textContent = "Name must be greater than 3 letters";
+        haan = false;
+      }
+
+      const age = document.getElementById("age").value.trim();
+      if (age === "") {
+        document.getElementById("ageError").textContent = "Age is required.";
+        isValid = false;
+      } else if (isNaN(age) || age <= 0) {
+        document.getElementById("ageError").textContent = "Age must be a positive number.";
+        isValid = false;
+      }
+
+      const email = document.getElementById("email").value.trim();
+      const emailpattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+      if(email === ""){
+        document.getElementById("emailError").textContent = "Please enter your email!";
+        haan = false;
+      }
+      else if(!emailpattern.test(email)){
+        document.getElementById("emailError").textContent = "Please enter a valid email format!";
+        haan = false;
+      }
+        
+        
+      if(haan){
+        const button = document.getElementById('butt');
+        button.addEventListener('click',function(){
+            alert('Thank You for submitting the form. Ticket amount and details will be shared on your email.')
+        });
+        window.open('homePage.html','_blank');}}
+    </script>
+</body>
+</html>
